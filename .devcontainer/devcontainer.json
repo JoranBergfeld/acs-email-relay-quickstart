@@ -23,7 +23,7 @@
     "forwardPorts": [
         // Forward ports if needed for local development
     ],
-    "postCreateCommand": "",
+    "postCreateCommand": "pip install uv && uv sync",
     "remoteUser": "vscode",
     "hostRequirements": {
         "memory": "8gb"

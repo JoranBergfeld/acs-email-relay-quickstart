@@ -4,6 +4,7 @@ languages:
 - azdeveloper
 - bicep
 - powershell
+- python
 products:
 - azure-communication-services
 urlFragment: acs-email-relay
@@ -35,11 +36,13 @@ Before you begin, ensure you have the following:
 
 2. **PowerShell 7+**: For running the email sending scripts, as well as some of the scripting used to create an app registration. You can download it from [here](https://github.com/PowerShell/PowerShell).
 
+3. **Python 3.7+** (Optional, for Python examples): For running the Python SDK examples. Install it from [here](https://www.python.org/downloads/).
+
 ## Getting Started
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/acs-email-sample.git
+   git clone https://github.com/Azure-Samples/acs-email-relay-quickstart
    cd acs-email-sample
    ```
 
@@ -103,7 +106,35 @@ To integrate email sending into your applications, you can use:
 - **SDKs**: Use the Azure Communication Services SDKs available for multiple languages
 - **SMTP**: Connect using standard SMTP protocols as shown above
 
+#### Python SDK Example
+
+This repository includes Python examples in the `app` directory that can run independently from the AZD deployment or use the managed identity that the AZD deployment creates. This examples leverages `uv` for python env and dependency management.
+
+Before running the examples, be sure to:
+1. Configure your environment variables in the `.env` file
+2. Update the recipient email addresses in the scripts
+
+Authentication options for the Python examples:
+1. **Managed Identity**: If you deployed using `azd up`, a user-assigned managed identity is already created and can be used for secure authentication.
+2. **DefaultAzureCredential**: Uses your `az login` credentials for local development.
+3. **Connection String** or **Access Key**: Can be used for testing but not recommended for production.
+
+The Python examples can also be deployed as standalone applications or containers. See the [Python app README](app/README.md) for deployment options and more details.
+
 For more information about implementation options, see the [official documentation](https://learn.microsoft.com/en-us/azure/communication-services/concepts/email/email-overview).
+
+After you have set your `.env` file, you can run the sample app from your command line using the commands below:
+```bash
+# Navigate to the app directory
+cd app
+
+# Install required dependencies
+uv sync
+
+# Send email to multiple recipients
+uv run send_email.py
+```
+
 
 ## Troubleshooting
 

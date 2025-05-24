@@ -1,0 +1,18 @@
+[project]
+name = "acs-email-relay-quickstart"
+version = "0.1.0"
+description = "Azure Communication Services Email Sample - Multiple Recipients"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "azure-communication-email",
+    "azure-identity",
+    "python-dotenv"
+]
+
+[tool.uv]
+# Optional: you can add uv-specific settings here
+
+[tool.setuptools]
+# Optional: if you want to use setuptools for packaging

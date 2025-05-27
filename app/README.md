@@ -72,14 +72,8 @@ To run:
 uv run send_email.py
 ```
 
-Before running, update the recipient email addresses in the `main()` function with your actual email addresses:
+Before running, ensure that the recipient email addresses are correctly configured in your `.env` file:
 
-```python
-# Sample email recipients - replace with actual email addresses
-to_recipients = ["recipient1@example.com", "recipient2@example.com"]
-cc_recipients = ["cc_recipient@example.com"]
-bcc_recipients = ["bcc_recipient@example.com"]
-```
 ## How It Works
 
 These samples use the Azure Communication Services Email SDK to send emails. They retrieve necessary configuration values from environment variables or a .env file.

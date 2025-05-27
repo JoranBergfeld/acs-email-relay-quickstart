@@ -106,8 +106,8 @@ def send_email_to_multiple_recipients(sender_address, to_recipients, cc_recipien
         
         # Check the result
         result = poller.result()
-        if result["status"] == "Succeeded":
-            print(f"Successfully sent the email (operation id: {result['id']})")
+        if result.status == "Succeeded":
+            print(f"Successfully sent the email (operation id: {result.id})")
         else:
             print(f"Failed to send email: {result}")
             

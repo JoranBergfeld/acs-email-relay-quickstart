@@ -108,7 +108,7 @@ To integrate email sending into your applications, you can use:
 
 #### Python SDK Example
 
-This repository includes Python examples in the `app` directory that can run independently from the AZD deployment or use the managed identity that the AZD deployment creates. This examples leverages `uv` for python env and dependency management.
+This repository includes a Python example in the `app` directory that can run independently from the AZD deployment or use the managed identity that the AZD deployment creates. This example leverages `uv` for python env and dependency management.
 
 Before running the examples, be sure to:
 1. Configure your environment variables in the `.env` file
